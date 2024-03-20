@@ -35,6 +35,7 @@ I will try to capture bluetooth packets using the wifi (and BT) devboard.
 #### Sources used for this project
 - https://github.com/justcallmekoko/ESP32Marauder/wiki/cli
 - https://www.threatlocker.com/blog/mac-bluetooth-impersonation-attacks
+- https://thecomputernoob.com/2023/02/17/bluetooth-badusb-attacks-flipper-zero/
 
 ## Custom Remotes
 - Custom remotes profiles
