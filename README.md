@@ -12,6 +12,7 @@ I will try to capture bluetooth packets using the wifi (and BT) devboard.
 5) Flash last marauder firmware
 ### Start to mess with the wifi/BT devboard
 **TLDR ESP32-S2 chip inside flipper wifi devboard does not support bluetooth.**
+
 *To investigate next : https://github.com/skorokithakis/catt*
 ### Connect to flipper Zero WiFi Dev Board cli (from justcallmekoko)
 ```
