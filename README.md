@@ -1,9 +1,6 @@
 # Flipper-Project
 Repository containing my work and experiments with the flipper zero.
 
-## Flipper's Bluetooth capacity 
-I discovered that the wifi dev board (ESP32 from flipper official reseller) is not bluetooth compatible, that limit the flipper to devices that support it's BLE protocol.  There is a way to pair it with windows 11 computer by going to Setting > Bluetooth & Devices > Bluetooth devices discovery and select advanced.  This is a dead end for now.
-
 ## Official WiFi devboard
 ### Flashing WiFi devboard with lastest Marauder Firmware.
 1) Install custom firmware on esp32 WiFi devboard : https://youtu.be/12M_oHmxcCQ?si=LEclXl1lESQbN20P&t=708
@@ -39,6 +36,9 @@ I discovered that the wifi dev board (ESP32 from flipper official reseller) is n
 - Custom remotes profiles
 - WIP Helix remote control (WIP)
 - Chromecast Remote (WIP)
+
+## Flipper's Bluetooth capacity 
+I discovered that the wifi dev board (ESP32 from flipper official reseller) is not bluetooth compatible, that limit the flipper to devices that support it's BLE protocol.  There is a way to pair it with windows 11 computer by going to Setting > Bluetooth & Devices > Bluetooth devices discovery and select advanced.  This is a dead end for now.
 
 ## Use Flipper Zero to control Chromecast
 **TL;DR** IR scanner only work with few functionality of the official chromecast remote like power or volume.  This is because the chromecast remote use bluetooth for the majority of the controls.  
