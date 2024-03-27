@@ -2,19 +2,20 @@
 Repository containing my work and experiments with the flipper zero.
 
 ## Use Flipper Zero to control Chromecast
-To control a Chromecast I think we have two angles, pair the flipper to the chromecast by making it think it is an OG remote or capture and emulate bluetooth packets.  
-I will try to capture bluetooth packets using the wifi (and BT) devboard.
-### Flashing wifi devboard with lastest Marauder Firmware.
-1) Install custom firmware on esp32 wifi devboard : https://youtu.be/12M_oHmxcCQ?si=LEclXl1lESQbN20P&t=708
+TL;DR IR scanner only work with few functionality of the official chromecast remote like power or volume.  This is because the chromecast remote use bluetooth for the majority of the controls.  
+
+## Flipper's Bluetooth capacity 
+I discovered that the wifi dev board (ESP32 from flipper official reseller) is not bluetooth compatible, that limit the flipper to devices that support it's BLE protocol.  There is a way to pair it with windows 11 computer by going to Setting > Bluetooth & Devices > Bluetooth devices discovery and select advanced.  This is a dead end for now.
+
+## Official WiFi devboard
+### Flashing WiFi devboard with lastest Marauder Firmware.
+1) Install custom firmware on esp32 WiFi devboard : https://youtu.be/12M_oHmxcCQ?si=LEclXl1lESQbN20P&t=708
 2) Download required driver : https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
-3) Plugin wifi devboard while pressing boot button
+3) Plugin WiFi devboard while pressing boot button
 4) Go to https://fzeeflasher.com/ with google chrome
 5) Flash last marauder firmware
-### Start to mess with the wifi/BT devboard
-**TLDR ESP32-S2 chip inside flipper wifi devboard does not support bluetooth.**
 
-*To investigate next : https://github.com/skorokithakis/catt*
-### Connect to flipper Zero WiFi Dev Board cli (from justcallmekoko)
+### Connect to Flipper Zero WiFi Dev Board cli (from justcallmekoko)
 ```
     Connect your Dev Board to the Flipper Zero
     Plug your flipper zero into your PC
@@ -32,8 +33,7 @@ I will try to capture bluetooth packets using the wifi (and BT) devboard.
     Verify the connection was successful by hitting the reset button on the dev board
         You should see the Marauder title screen appear
 ```
-
-#### Sources used for this project
+#### WiFi Dev Board Sources
 - https://github.com/justcallmekoko/ESP32Marauder/wiki/cli
 - https://www.threatlocker.com/blog/mac-bluetooth-impersonation-attacks
 - https://thecomputernoob.com/2023/02/17/bluetooth-badusb-attacks-flipper-zero/
