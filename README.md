@@ -3,9 +3,11 @@ Repository containing my work and experiments with the flipper zero.
 
 ## Custom Firmware
 Why use custom firmware on the Flipper Zero?  The OFW lock certain frequencies and functions of the flipper.  It also contain fewer apps and is less stable.  
-### Momentum-Firmware
+### Momentum
 This is the newest current firmware available as of now.  It is the evolution of Xtreme-Firmware, backed by the main devs who made XFW great.  This firmware unlock all the same functions of XFW and more (Mass Usb Storage, javascript execution capabilities).  
+
 To see all the new features of this firmware and to get it go to the official website : https://momentum-fw.dev/
+
 Github Repo : https://github.com/Next-Flip/Momentum-Firmware
 
 ## Official WiFi devboard
