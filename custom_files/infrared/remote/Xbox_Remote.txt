@@ -1,0 +1,12 @@
+REMOTE: /ext/infrared/my_remotes/Xbox.ir
+UP: Up
+DOWN: Down
+LEFT: Left
+RIGHT: Right
+OK: Select
+BACK: Back
+UPHOLD: +
+DOWNHOLD: -
+# LEFTHOLD: Source
+# RIGHTHOLD: Exit
+OKHOLD: Power
