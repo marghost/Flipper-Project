@@ -53,8 +53,10 @@ Newer remotes like the one that comes with the Chromecast have an hybrid system 
 
 ### Helix Remote 
 *(Provided by cable compagny)*
+
+Presumed Bluetooth/IR.
+
 **WIP**
-Presumed Bluetooth/IR.  TBD.
 
 ## Flipper's Bluetooth capacity 
 I discovered that the wifi dev board (ESP32 from flipper official reseller) is not bluetooth compatible, that limit the flipper to devices that support it's BLE protocol.  There is a way to pair it with windows 11 computer by going to Setting > Bluetooth & Devices > Bluetooth devices discovery and select advanced.  
@@ -65,20 +67,24 @@ I discovered that the wifi dev board (ESP32 from flipper official reseller) is n
 To compile an app you need to clone the repo of the actual firmware you are using.  In my case Momentum-Firmware.  I will use vscodium, but you can use your favorite code editor.
 
 **1) Get the Repo**
+
 `
 git clone --recursive https://github.com/Next-Flip/Momentum-Firmware.git ./
 `
 
 **2) Open a terminal**
+
 Right-clic on the fbt file from the repo and select "Open in terminal"
 
 **3) Setup vscode integration**
+
 This command will download the toolchain needed.
 `
 ./fbt vscode_dist
 `
 
-**3) **
+**3)**
+
 WIP
 
 ## Resources
