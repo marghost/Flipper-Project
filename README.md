@@ -41,10 +41,24 @@ Github Repo : https://github.com/Next-Flip/Momentum-Firmware
 - https://www.threatlocker.com/blog/mac-bluetooth-impersonation-attacks
 - https://thecomputernoob.com/2023/02/17/bluetooth-badusb-attacks-flipper-zero/
 
-## Custom Remotes
-- Custom remotes profiles
-- WIP Helix remote control (WIP)
-- Chromecast Remote (WIP)
+## Controling Remotes
+Custom remote files can be found [here](custom_files/infrared/my_remotes/).
+### IR Remotes
+The infrared app is pretty easy to use.  I tested it by cloning signal from various of my remotes.  Work great with old remotes.  
+
+Newer remotes like the one that comes with the Chromecast have an hybrid system that can't be fully cloned and emulated by the flipper.  The issue is those remote use a few ir commands but to control the main unit, communication is done via bluetooth.  
+
+### Chromecast
+We can copy easily a few feature that are using IR signal like power and volume.  The main problem is to control Chromecast functions, because the signal is not sent using IR.  We would need to find a way to emulate packets sent to the remote via bluetooth.  
+
+Not a project I want to continue.  RIP.
+
+### Helix Remote 
+*(Provided by cable compagny)*
+Presumed Bluetooth/IR.  TBD.
+
+**WIP**
+
 
 ## Flipper's Bluetooth capacity 
 I discovered that the wifi dev board (ESP32 from flipper official reseller) is not bluetooth compatible, that limit the flipper to devices that support it's BLE protocol.  There is a way to pair it with windows 11 computer by going to Setting > Bluetooth & Devices > Bluetooth devices discovery and select advanced.  
