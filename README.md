@@ -83,9 +83,21 @@ This command will download the toolchain needed.
 ./fbt vscode_dist
 `
 
-**3)**
+*Restart vscodium after this download.*
 
-WIP
+**4) [Debug] Build Firmware**
+
+Press Ctrl+Shift+B.  Then select Debug Build Firmware.
+
+**4) Create and Compile an APP**
+
+Right-clic on application_user and then create a new folder for your app.
+
+Then you can test an example app provided with the firmware or you can build your own.
+
+To test it you need to press Ctrl+Shift+B and then select "Launch app on flipper"
+
+The compiled app can be found on your flipper inside the "/apps/" folder.  It will have the .fap ext.
 
 ## Resources
 - https://github.com/UberGuidoZ/Flipper
