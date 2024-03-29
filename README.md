@@ -49,23 +49,37 @@ The infrared app is pretty easy to use.  I tested it by cloning signal from vari
 Newer remotes like the one that comes with the Chromecast have an hybrid system that can't be fully cloned and emulated by the flipper.  The issue is those remote use a few ir commands but to control the main unit, communication is done via bluetooth.  
 
 ### Chromecast
-We can copy easily a few feature that are using IR signal like power and volume.  The main problem is to control Chromecast functions, because the signal is not sent using IR.  We would need to find a way to emulate packets sent to the remote via bluetooth.  
-
-Not a project I want to continue.  RIP.
+**TL;DR** IR scanner only work with few IR functionality of the official chromecast remote like power or volume.  This is because the chromecast remote use bluetooth for the majority of the controls.  This is a dead end for now.
 
 ### Helix Remote 
 *(Provided by cable compagny)*
-Presumed Bluetooth/IR.  TBD.
-
 **WIP**
-
+Presumed Bluetooth/IR.  TBD.
 
 ## Flipper's Bluetooth capacity 
 I discovered that the wifi dev board (ESP32 from flipper official reseller) is not bluetooth compatible, that limit the flipper to devices that support it's BLE protocol.  There is a way to pair it with windows 11 computer by going to Setting > Bluetooth & Devices > Bluetooth devices discovery and select advanced.  
 *To try next : Bluetooth BadKB scripts*
 
-## Use Flipper Zero to control Chromecast
-**TL;DR** IR scanner only work with few functionality of the official chromecast remote like power or volume.  This is because the chromecast remote use bluetooth for the majority of the controls.  This is a dead end for now.
+## DEV
+### Compile for Flipper Zero
+To compile an app you need to clone the repo of the actual firmware you are using.  In my case Momentum-Firmware.  I will use vscodium, but you can use your favorite code editor.
+
+**1) Get the Repo**
+`
+git clone --recursive https://github.com/Next-Flip/Momentum-Firmware.git ./
+`
+
+**2) Open a terminal**
+Right-clic on the fbt file from the repo and select "Open in terminal"
+
+**3) Setup vscode integration**
+This command will download the toolchain needed.
+`
+./fbt vscode_dist
+`
+
+**3) **
+WIP
 
 ## Resources
 - https://github.com/UberGuidoZ/Flipper
@@ -74,3 +88,4 @@ I discovered that the wifi dev board (ESP32 from flipper official reseller) is n
 - https://github.com/Flipper-XFW/Xtreme-Firmware
 - https://github.com/hak5/usbrubberducky-payloads
 - https://www.youtube.com/watch?v=12M_oHmxcCQ
+- https://www.youtube.com/watch?v=27RtJAxY2RY (DEV / Hello World / How to compile for the flipper zero)
