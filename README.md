@@ -62,7 +62,7 @@ Presumed Bluetooth/IR.
 I discovered that the wifi dev board (ESP32 from flipper official reseller) is not bluetooth compatible, that limit the flipper to devices that support it's BLE protocol.  There is a way to pair it with windows 11 computer by going to Setting > Bluetooth & Devices > Bluetooth devices discovery and select advanced.  
 *To try next : Bluetooth BadKB scripts*
 
-## DEV
+## Application Developpement
 ### Compile for Flipper Zero
 To compile an app you need to clone the repo of the actual firmware you are using.  In my case Momentum-Firmware.  I will use vscodium, but you can use your favorite code editor.
 
@@ -98,6 +98,32 @@ Then you can test an example app provided with the firmware or you can build you
 To test it you need to press Ctrl+Shift+B and then select "Launch app on flipper"
 
 The compiled app can be found on your flipper inside the "/apps/" folder.  It will have the .fap ext.
+
+### Hello World
+A proof of concept using the provided code examples to make a basic Canevas with text on it.
+
+**Source :** [HelloWorld Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/HelloWorld)
+
+**Compiled App :** [hello_world.fap](https://github.com/marghost/Flipper-Project/blob/main/DEV/apps/Misc/hello_world.fap)
+
+### BLE Spam RickRoll Edition
+#### Description
+Flood BLE advertisements with Rick Roll Lyrics to cause spammy fake bluetooth devices.  The new "feature" i added let you Rick Roll people's Bluetooth settings.  
+
+Slightly modified version of ble_spam.  Based on the source provided here : [ble_spam](https://github.com/Flipper-XFW/Xtreme-Apps/tree/dev/ble_spam)  
+
+This was done as a proof of concept, this is **NOT** an officially supported app.
+
+**Source :** [BLE Spam RickRoll Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/ble_spam_RickRoll)
+
+**Compiled App :** [ble_spam_rickroll.fap](https://github.com/marghost/Flipper-Project/blob/main/DEV/apps/Bluetooth/ble_spam_rickroll.fap)
+
+**CREDIT :** 
+- Hacked together by @Willy-JL
+- Custom adv API by @Willy-JL (idea by @xMasterX)
+- iOS 17 Crash by @ECTO-1A
+- Android, Samsung and Windows Pairs by @Spooks4576 and @ECTO-1A
+- Research on behaviors and parameters by @Willy-JL, @ECTO-1A and @Spooks4576
 
 ## Resources
 - https://github.com/UberGuidoZ/Flipper

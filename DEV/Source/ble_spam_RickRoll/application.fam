@@ -1,0 +1,16 @@
+App(
+    appid="ble_spam_rickroll",
+    name="BLE Spam RickRoll Edition",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="ble_spam",
+    stack_size=2 * 1024,
+    fap_icon="ble_spam_RickRoll_10px.png",
+    fap_category="Bluetooth",
+    fap_file_assets="assets",
+    fap_author="@Willy-JL @ECTO-1A @Spooks4576 @marghost",
+    fap_weburl="",
+    fap_version="6.0",
+    fap_description="Flood BLE advertisements with Rick Roll to cause spammy and annoying popups",
+    fap_icon_assets="icons",
+    fap_icon_assets_symbol="ble_spam",
+)
