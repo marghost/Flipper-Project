@@ -85,11 +85,15 @@ This command will download the toolchain needed.
 
 *Restart vscodium after this download.*
 
-**4) [Debug] Build Firmware**
+**4) Select the right firmware version (DEV vs Release)**
+
+You need to select the right version inside source control to compile for your firmware.  Go to the "Source Control" inside vscodium.  Then go to the cloned firmware and click on the little DEV icon.  Select the right firmware version for witch you want to compile your apps.
+
+**5) [Debug] Build Firmware**
 
 Press Ctrl+Shift+B.  Then select Debug Build Firmware.
 
-**4) Create and Compile an APP**
+**6) Create and Compile an APP**
 
 Right-clic on application_user and then create a new folder for your app.
 
