@@ -99,12 +99,14 @@ To test it you need to press Ctrl+Shift+B and then select "Launch app on flipper
 
 The compiled app can be found on your flipper inside the "/apps/" folder.  It will have the .fap ext.
 
+## My Applications
+
 ### Hello World
 A proof of concept using the provided code examples to make a basic Canevas with text on it.
 
 **Source :** [HelloWorld Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/HelloWorld)
 
-**Compiled App :** [hello_world.fap](https://github.com/marghost/Flipper-Project/blob/main/DEV/apps/Misc/hello_world.fap)
+**Compiled App :** [hello_world.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Misc/hello_world.fap)
 
 ### BLE Spam RickRoll Edition
 #### Description
@@ -116,9 +118,9 @@ This was done as a proof of concept, this is **NOT** an officially supported app
 
 **Source :** [BLE Spam RickRoll Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/ble_spam_RickRoll)
 
-**Compiled App :** [ble_spam_rickroll.fap](https://github.com/marghost/Flipper-Project/blob/main/DEV/apps/Bluetooth/ble_spam_rickroll.fap)
+**Compiled App :** [ble_spam_rickroll.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Bluetooth/ble_spam_rickroll.fap)
 
-**CREDIT :** 
+#### CREDIT
 - Hacked together by @Willy-JL
 - Custom adv API by @Willy-JL (idea by @xMasterX)
 - iOS 17 Crash by @ECTO-1A

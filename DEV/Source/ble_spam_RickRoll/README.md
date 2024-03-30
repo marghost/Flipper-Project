@@ -8,7 +8,7 @@ This was done as a proof of concept, this is **NOT** an officially supported app
 
 **Source :** [BLE Spam RickRoll Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/ble_spam_RickRoll)
 
-**Compiled App :** [ble_spam_rickroll.fap](https://github.com/marghost/Flipper-Project/blob/main/DEV/apps/Bluetooth/ble_spam_rickroll.fap)
+**Compiled App :** [ble_spam_rickroll.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Bluetooth/ble_spam_rickroll.fap)
 
 ## CREDIT 
 - Hacked together by @Willy-JL
