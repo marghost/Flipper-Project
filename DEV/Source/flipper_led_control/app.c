@@ -123,7 +123,7 @@ static void skeleton_submenu_callback(void* context, uint32_t index) {
 */
 static const char* setting_1_config_label = "Team color";
 static uint8_t setting_1_values[] = {1, 2, 4};
-static char* setting_1_names[] = {"Red", "Green", "Blue"};
+static char* setting_1_names[] = {"red", "green", "blue"};
 static void skeleton_setting_1_change(VariableItem* item) {
     SkeletonApp* app = variable_item_get_context(item);
     uint8_t index = variable_item_get_current_value_index(item);
@@ -209,24 +209,12 @@ static void skeleton_setting_item_clicked(void* context, uint32_t index) {
  * @param      canvas  The canvas to draw on.
  * @param      model   The model - MyModel object.
 */
-static void skeleton_view_game_draw_callback(Canvas* canvas, void* model) {
-    SkeletonGameModel* my_model = (SkeletonGameModel*)model;
-    canvas_draw_icon(canvas, my_model->x, 20, &I_glyph_1_14x40);
-    canvas_draw_str(canvas, 1, 10, "LEFT/RIGHT to change x");
-    FuriString* xstr = furi_string_alloc();
-    furi_string_printf(xstr, "x: %u  OK=play tone", my_model->x);
-    canvas_draw_str(canvas, 44, 24, furi_string_get_cstr(xstr));
-    furi_string_printf(xstr, "random: %u", (uint8_t)(furi_hal_random_get() % 256));
-    canvas_draw_str(canvas, 44, 36, furi_string_get_cstr(xstr));
-    furi_string_printf(
-        xstr,
-        "team: %s (%u)",
-        setting_1_names[my_model->setting_1_index],
-        setting_1_values[my_model->setting_1_index]);
-    canvas_draw_str(canvas, 44, 48, furi_string_get_cstr(xstr));
-    furi_string_printf(xstr, "name: %s", furi_string_get_cstr(my_model->setting_2_name));
-    canvas_draw_str(canvas, 44, 60, furi_string_get_cstr(xstr));
-    furi_string_free(xstr);
+static void skeleton_view_game_draw_callback(Canvas* canvas, void*) {
+    canvas_draw_str(canvas, 1, 10, "Change Builtin LED Color");
+    canvas_draw_str(canvas, 14, 24, "Left : RED");
+    canvas_draw_str(canvas, 14, 36, "OK : BLUE");
+    canvas_draw_str(canvas, 14, 48, "Right : GREEN");
+    canvas_draw_str(canvas, 1, 60, "Press Back to reset");
 }
 
 /**
@@ -263,6 +251,8 @@ static void skeleton_view_game_exit_callback(void* context) {
     SkeletonApp* app = (SkeletonApp*)context;
     furi_timer_stop(app->timer);
     furi_timer_free(app->timer);
+    NotificationApp* notifications = furi_record_open(RECORD_NOTIFICATION);
+    notification_message(notifications, &sequence_reset_rgb);
     app->timer = NULL;
 }
 
@@ -287,18 +277,15 @@ static bool skeleton_view_game_custom_event_callback(uint32_t event, void* conte
     case SkeletonEventIdOkPressed:
         // Process the OK button.  We play a tone based on the x coordinate.
         if(furi_hal_speaker_acquire(500)) {
-            float frequency;
-            bool redraw = false;
-            with_view_model(
-                app->view_game,
-                SkeletonGameModel * model,
-                { frequency = model->x * 100 + 100; },
-                redraw);
-            furi_hal_speaker_start(frequency, 1.0);
+            furi_hal_speaker_start(100, 1.0);
             furi_delay_ms(100);
             furi_hal_speaker_stop();
             furi_hal_speaker_release();
-            notification_message(notifications, &sequence_blink_red_100);
+            notification_message(notifications, &sequence_reset_rgb);
+            notification_message(
+                notifications, 
+                &sequence_set_only_blue_255
+                ); 
         }
         return true;
     default:
@@ -315,30 +302,41 @@ static bool skeleton_view_game_custom_event_callback(uint32_t event, void* conte
 */
 static bool skeleton_view_game_input_callback(InputEvent* event, void* context) {
     SkeletonApp* app = (SkeletonApp*)context;
+    NotificationApp* notifications = furi_record_open(RECORD_NOTIFICATION);
     if(event->type == InputTypeShort) {
         if(event->key == InputKeyLeft) {
-            // Left button clicked, reduce x coordinate.
-            bool redraw = true;
-            with_view_model(
-                app->view_game,
-                SkeletonGameModel * model,
-                {
-                    if(model->x > 0) {
-                        model->x--;
-                    }
-                },
-                redraw);
+
+
+        if(furi_hal_speaker_acquire(500)) {
+            furi_hal_speaker_start(110, 1.0);
+            furi_delay_ms(100);
+            furi_hal_speaker_stop();
+            furi_hal_speaker_release();
+            notification_message(notifications, &sequence_reset_rgb);
+            notification_message(
+                notifications, 
+                &sequence_set_only_red_255
+                ); 
+        }
+
+
         } else if(event->key == InputKeyRight) {
-            // Right button clicked, increase x coordinate.
-            bool redraw = true;
-            with_view_model(
-                app->view_game,
-                SkeletonGameModel * model,
-                {
-                    // Should we have some maximum value?
-                    model->x++;
-                },
-                redraw);
+
+
+
+        if(furi_hal_speaker_acquire(500)) {
+            furi_hal_speaker_start(120, 1.0);
+            furi_delay_ms(100);
+            furi_hal_speaker_stop();
+            furi_hal_speaker_release();
+            notification_message(notifications, &sequence_reset_rgb);
+            notification_message(
+                notifications, 
+                &sequence_set_only_green_255
+                ); 
+        }
+
+
         }
     } else if(event->type == InputTypePress) {
         if(event->key == InputKeyOk) {
@@ -369,10 +367,10 @@ static SkeletonApp* skeleton_app_alloc() {
     view_dispatcher_set_event_callback_context(app->view_dispatcher, app);
 
     app->submenu = submenu_alloc();
+ //   submenu_add_item(
+ //       app->submenu, "Config", SkeletonSubmenuIndexConfigure, skeleton_submenu_callback, app);
     submenu_add_item(
-        app->submenu, "Config", SkeletonSubmenuIndexConfigure, skeleton_submenu_callback, app);
-    submenu_add_item(
-        app->submenu, "Play", SkeletonSubmenuIndexGame, skeleton_submenu_callback, app);
+        app->submenu, "LED Control", SkeletonSubmenuIndexGame, skeleton_submenu_callback, app);
     submenu_add_item(
         app->submenu, "About", SkeletonSubmenuIndexAbout, skeleton_submenu_callback, app);
     view_set_previous_callback(submenu_get_view(app->submenu), skeleton_navigation_exit_callback);
@@ -437,7 +435,7 @@ static SkeletonApp* skeleton_app_alloc() {
         0,
         128,
         64,
-        "This is a sample application.\n---\nReplace code and message\nwith your content!\n\nauthor: @codeallnight\nhttps://discord.com/invite/NsjCvqwPAd\nhttps://youtube.com/@MrDerekJamison");
+        "Flipper LED Control\n---\nThis is a simple app to control the integrated LED built in the Flipper Zero.\n\nAuthor: @marghost\nREPO: github.com/marghost\nWebsite: www.marg.host");
     view_set_previous_callback(
         widget_get_view(app->widget_about), skeleton_navigation_submenu_callback);
     view_dispatcher_add_view(
@@ -462,7 +460,6 @@ static void skeleton_app_free(SkeletonApp* app) {
     notification_message(app->notifications, &sequence_display_backlight_enforce_auto);
 #endif
     furi_record_close(RECORD_NOTIFICATION);
-
     view_dispatcher_remove_view(app->view_dispatcher, SkeletonViewTextInput);
     text_input_free(app->text_input);
     free(app->temp_buffer);
