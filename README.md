@@ -105,12 +105,12 @@ The compiled app can be found on your flipper inside the "/apps/" folder.  It wi
 
 ## My Applications
 
-### Hello World
-A proof of concept using the provided code examples to make a basic Canevas with text on it.
+### Flipper LED Control
+This is a small app I built as a proof of concept to control the onboard Status LED of the Flipper Zero.
 
-**Source :** [HelloWorld Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/HelloWorld)
+**Source & More Info :** [Flipper LED Control Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/flipper_led_control)
 
-**Compiled App :** [hello_world.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Misc/hello_world.fap)
+**Compiled App :** [flipper_led_control.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Misc/flipper_led_control.fap)
 
 ### BLE Spam RickRoll Edition
 #### Description
@@ -123,6 +123,13 @@ This was done as a proof of concept, this is **NOT** an officially supported app
 **Source :** [BLE Spam RickRoll Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/ble_spam_RickRoll)
 
 **Compiled App :** [ble_spam_rickroll.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Bluetooth/ble_spam_rickroll.fap)
+
+### Hello World
+A proof of concept using the provided code examples to make a basic Canevas with text on it.
+
+**Source :** [HelloWorld Code](https://github.com/marghost/Flipper-Project/tree/main/DEV/Source/HelloWorld)
+
+**Compiled App :** [hello_world.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Misc/hello_world.fap)
 
 #### CREDIT
 - Hacked together by @Willy-JL
