@@ -13,5 +13,7 @@ Then integrate this to a triggered loop :
 notification_message(notifications, &sequence_blink_red_100);
 ```
 
-## Ref
+## Resources
 - https://github.com/Mywk/FlipperTemperatureSensor
+- https://developer.flipper.net/flipperzero/doxygen/notification_8h_source.html
+- https://docs.rs/flipperzero/latest/flipperzero/notification/led/index.html#constants
