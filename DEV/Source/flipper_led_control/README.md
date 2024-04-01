@@ -22,7 +22,7 @@ Here is the complete list of possible interactions with the builtin led : https:
 To see it in action you can test the application by downloading the release below.  
 
 ## RELEASE
-Beta v0.1 : 
+Beta v0.1 :[flipper_led_control.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Misc/flipper_led_control.fap)
 
 ## Resources
 - https://github.com/Mywk/FlipperTemperatureSensor
