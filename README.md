@@ -132,10 +132,22 @@ This was done as a proof of concept, this is **NOT** an officially supported app
 - Research on behaviors and parameters by @Willy-JL, @ECTO-1A and @Spooks4576
 
 ## Resources
-- https://github.com/UberGuidoZ/Flipper
-- https://github.com/djsime1/awesome-flipperzero
+### Basic doc
 - https://docs.flipper.net/
-- https://github.com/Flipper-XFW/Xtreme-Firmware
+- https://www.youtube.com/watch?v=12M_oHmxcCQ (Starter Guide)
+### Extended doc and file repo
+- https://github.com/UberGuidoZ/Flipper
+- https://github.com/skizzophrenic/Ubers-SD-Files
+- https://github.com/djsime1/awesome-flipperzero
 - https://github.com/hak5/usbrubberducky-payloads
-- https://www.youtube.com/watch?v=12M_oHmxcCQ
+### Firmwares
+- https://github.com/Flipper-XFW/Xtreme-Firmware
+- https://github.com/Next-Flip/Momentum-Firmware
+### Dev ressources
+- https://github.com/flipperdevices/flipperzero-ufbt (SDK)
+- https://github.com/flipperdevices/flipperzero-firmware/blob/dev/documentation/fbt.md (All in one developpement toolkit)
+- https://github.com/jamisonderek/flipper-zero-tutorials/
 - https://www.youtube.com/watch?v=27RtJAxY2RY (DEV / Hello World / How to compile for the flipper zero)
+- https://www.youtube.com/watch?v=gqovwRkn2xw&list=PLM1cyTMe-PYJaMQ6TWeK1mAWxORdjYJZ5 (Full playlist)
+- https://instantiator.dev/post/flipper-zero-app-tutorial-01/
+- https://instantiator.dev/post/flipper-zero-app-tutorial-02/
