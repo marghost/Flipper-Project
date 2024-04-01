@@ -1,0 +1,15 @@
+App(
+    appid="flipper_led_control",
+    name="Flipper LED Control",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="main_flipper_led",
+    stack_size=4 * 1024,
+    requires=[
+        "gui",
+    ],
+    order=10,
+    fap_icon="flipper_led_control.png",
+    fap_category="DEV",
+    fap_icon_assets="assets",
+    fap_description="This is a simple app to control the LED integrated to the Flipper Zero.",
+)
