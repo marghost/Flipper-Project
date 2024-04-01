@@ -19,10 +19,10 @@ Then integrate this code to a triggered function :
 
 Here is the complete list of possible interactions with the builtin led : https://developer.flipper.net/flipperzero/doxygen/notification__messages_8h_source.html
 
-To see it in action you can test the application by downloading the release below.  
+To see it in action you can test the application by downloading the release below.  You can drop the application inside the /apps/Tools/ folder.
 
 ## RELEASE
-Beta v0.1 :[flipper_led_control.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Misc/flipper_led_control.fap)
+Beta v0.1 : [flipper_led_control.fap](https://github.com/marghost/Flipper-Project/raw/main/DEV/apps/Misc/flipper_led_control.fap)
 
 ## Resources
 - https://github.com/Mywk/FlipperTemperatureSensor
